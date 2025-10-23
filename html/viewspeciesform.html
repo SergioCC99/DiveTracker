@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Marcar Especie Vistas</title>
+</head>
+<body class="container">
+    <div class="title-inmersion">
+        <h2>Marcar especies</h2>
+
+        <span class="material-symbols-outlined" onclick="window.location.href='forminmersion.html'">close</span>
+    </div>
+
+    <!--Marcar especies-->
+    <section class="carrusel-container">
+
+        <div class="species-grid">
+
+            <div class="specie-item-new">
+                <img src="../img/img-pez1.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Manta raya</h3>
+                    <input type="checkbox" value="op1" checked>
+                </div>
+            </div>
+
+            <div class="specie-item-new">
+                <img src="../img/img-pez2.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez loro</h3>
+                    <input type="checkbox" value="op1" checked>
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez3.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez ballena</h3>
+                    <input type="checkbox" value="op1" checked>
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez4.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Manta raya</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            
+            <div class="specie-item-new">
+                <img src="../img/img-pez5.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez loro</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez6.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez ballena</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez7.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Manta raya</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            
+            <div class="specie-item-new">
+                <img src="../img/img-pez8.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez loro</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez9.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez ballena</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez10.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Manta raya</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            
+            <div class="specie-item-new">
+                <img src="../img/img-pez11.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez loro</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            <div class="specie-item-new">
+                <img src="../img/img-pez12.jpg" alt="Imagen especie" class="img-especie">
+                <div class="title-especie">
+                    <h3>Pez ballena</h3>
+                    <input type="checkbox" value="op1">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    
+    <!--Boton guardar-->
+    <button class="primary-button" onclick="document.getElementById('modal').showModal()">Guardar innformación</button>
+
+    <dialog id="modal">
+        <div class="modal-content">
+            <span class="material-symbols-outlined check">check_circle</span>
+            <p>información guiardada con éxito</p>
+            <button class="primary-button" onclick="window.location.href= 'bitacora.html'">continuar</button>
+        </div>
+    </dialog>
+
+</body>
+</html>

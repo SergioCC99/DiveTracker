@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Biblioteca</title>
+    </head>
+    <body>
+        
+        <!-- componente header (vue) -->
+        <div id="headerApp">
+            <app-header></app-header>
+            <desktop-header></desktop-header>
+        </div>
+        
+        <main class="container-main">
+            <h2>Biblioteca Marina</h2>
+            <!--Resuemn de hallazgos-->
+            <section class="resumen">
+                <h2>Resumen hallazgos</h2>
+
+                <div class="item-progress">
+                    <p>Progreso:</p>
+                    <div class="containerProgressBar">
+                        <div class="progress-bar">
+                            <div id="progressDone" class="progress-done"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-data">
+                    <p>Vistas:</p>
+                    <p id="countVistas"></p>
+                </div>
+
+                <div class="item-data">
+                    <p>Faltantes:</p>
+                    <p id="countFaltantes"></p>
+                </div>
+            </section>
+            <!--Logros al ir encontrando especies
+            <section class="resumen">
+                <h2>Tus logros</h2>
+                <div class="logros">
+                    <img src="../img/achievement.jpg" alt="Imagen logro" class="logro">
+                    <img src="../img/achievement.jpg" alt="Imagen logro" class="logro">
+                    <img src="../img/achievement.jpg" alt="Imagen logro" class="logro">
+
+                </div>
+            </section>-->
+
+            <section>
+                <div class ="input-container">
+                        <label>Buscar</label>
+                        <input id="searchInput" type="text" placeholder="Ej. Tiburon" class="input-field">
+                    </div>
+            </section>
+    
+            <!--especies-->
+            <div class="species-grid" id="speciesGrid"></div>
+        
+        </main>
+
+        <!-- Menu inferior (vue) -->
+        <div id="menuApp">
+            <bottom-menu></bottom-menu>
+        </div>
+    
+        <script src="../js/componentes/header.js"></script>
+        <script src="../js/componentes/bottomMenu.js"></script>
+        <script src="../js/especies.js"></script>
+
+    </body>
+</html>
+

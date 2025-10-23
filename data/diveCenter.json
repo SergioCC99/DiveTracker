@@ -1,0 +1,30 @@
+{
+  "diveCenter": [
+    {
+      "id": 1,
+      "imagen": "../img/aquariumDivers.jfif",
+      "escuela": "AquariumDivers",
+      "descripcion": "AquariumDivers ofrece cursos de buceo para todos los niveles, desde principiantes hasta profesionales. Con instructores certificados internacionalmente y un enfoque en seguridad y experiencias inolvidables, exploramos los mejores arrecifes y zonas marinas de la región. Además, contamos con equipo de alquiler de alta calidad y excursiones personalizadas para que cada inmersión sea única.",
+      "correo": "info@aquariumdivers.com",
+      "telefono": "+57 3001234567",
+      "direccion": "Calle 123 #45-67",
+      "img1":"../img/aquariumDivers1.jpg",
+      "img2":"../img/aquariumDivers2.jpg",
+      "img3":"../img/aquariumDivers3.jpg"
+    },
+
+    {
+      "id": 2,
+      "imagen": "../img/blueOcean.jfif",
+      "escuela": "BlueOceanDivers",
+      "descripcion": "BlueOceanDivers es tu puerta de entrada al mundo submarino. Ofrecemos certificaciones PADI y cursos especializados en fotografía submarina y conservación marina. Nuestro equipo de instructores apasionados te guiará a través de experiencias seguras y educativas, descubriendo la belleza de la vida marina en inmersiones adaptadas a tu nivel.",
+      "correo": "info@blueoceandivers.com",
+      "telefono": "+57 3007654321",
+      "direccion": "Calle 456 #78-90",
+      "img1":"../img/blueOcean1.jpg",
+      "img2":"../img/blueOcean2.jpg",
+      "img3":"../img/blueOcean3.jpg"
+    }
+  ]
+
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Mapa</title>
+</head>
+    <body>
+
+        <!-- componente header (vue) -->
+        <div id="headerApp">
+            <app-header></app-header>
+            <desktop-header></desktop-header>
+        </div>
+
+        <main class="container-main">
+            <h2>¡Explora nuevos destinos!</h2>
+            <section class="carrusel-container">
+
+                <!--agregar fotos-->
+                <div class="carrusel-title">
+                    <h2>Te recomendamos</h2>
+                </div>
+                <!--fotos cargadas-->
+                <div class="carrusel-items">
+                    <img src="../img/location1.jpg" alt="Imagen especie" class="carrusel-img">
+                    <img src="../img/location2.jpg" alt="Imagen especie" class="carrusel-img">
+                    <img src="../img/location3.jpg" alt="Imagen especie" class="carrusel-img">
+                </div>
+            </section>
+            <!--Boton-->
+            <a href="maplocation.html" class="primary-button">Nueva aventura<span class="material-symbols-outlined">add</span></a>
+            <!--Historial de reservas-->
+            <section class =historial>
+                <h2>Mis reservas</h2>
+                
+                <ul>
+                    <li class="inmersion" onclick="window.location.href= 'detailbooking.html'">
+                        <label class="stateTrue">Reservado</label>
+                        <div class="date-inmersion">
+                            <span class="material-symbols-outlined calendar">calendar_today</span>
+                            <p>20/10/2025</p>    
+                        </div>
+                        <div class="location-inmersion">
+                            <span class="material-symbols-outlined location">location_on</span>
+                            <p>San Andres, Colombia</p>    
+                        </div>
+                    </li>
+                    <li class="inmersion" onclick="window.location.href= 'detail.html'">
+
+                        <label class="stateFalse">Realizado</label>
+                        <div class="date-inmersion">
+                            <span class="material-symbols-outlined calendar">calendar_today</span>
+                            <p>20/10/2025</p>    
+                        </div>
+                        <div class="location-inmersion">
+                            <span class="material-symbols-outlined location">location_on</span>
+                            <p>San Andres, Colombia</p>    
+                        </div>
+                    </li>
+                    <li class="inmersion" onclick="window.location.href= 'detail.html'">
+
+                        <label class="stateFalse">Realizado</label>
+                        <div class="date-inmersion">
+                            <span class="material-symbols-outlined calendar">calendar_today</span>
+                            <p>20/10/2025</p>    
+                        </div>
+                        <div class="location-inmersion">
+                            <span class="material-symbols-outlined location">location_on</span>
+                            <p>San Andres, Colombia</p>    
+                        </div>
+                    </li>  
+                </ul>
+            </section>
+        </main>
+        
+        <!-- Menu inferior (vue) -->
+        <div id="menuApp">
+            <bottom-menu></bottom-menu>
+        </div>
+
+        <script src="../js/componentes/header.js"></script>
+        <script src="../js/componentes/bottomMenu.js"></script> 
+        <script src="../js/reservas.js"></script>
+    </body>
+</html>

@@ -1,0 +1,209 @@
+//Estilos Genericos
+@mixin input {
+  padding: 12px 8px;
+  background-color: $bg-neutral-secondary;
+  border: none;
+  border-radius: 8px;
+  color: $text-neutral-primary;
+  font-size: 16px;
+
+  &:focus {
+    border: 2px solid $border-brand-primary;
+    box-shadow: 0 0 0 4px rgb(19, 58, 108, 0.25);
+    outline: none;
+  }
+
+  
+}
+
+@mixin InputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@mixin primary-button {
+  background-color: $bg-brand-primary;
+  color: $text-neutral-inverse;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 12px;
+  width: 100%;
+  font-family: "Lato-Regular" Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;   
+  align-items: center;         
+  justify-content: center;     
+  gap: 8px;
+  outline: none;
+  border: none;
+
+
+    &:hover {
+      background-color: #0d5691;
+    }
+}
+
+@mixin secondary-button {
+  background-color: white;
+  color: $text-brand-primary;
+  border: solid 2px $border-brand-primary;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 12px;
+  width: 100%;
+  font-family: "Lato-Regular" Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;   
+  align-items: center;         
+  justify-content: center;     
+  gap: 8px;
+
+
+    &:hover {
+      background-color: #cacaca;
+    }
+}
+
+@mixin warning-button {
+  background-color: white;
+  color: rgb(226, 80, 80);
+  border: solid 2px rgb(226, 80, 80);
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 12px;
+  width: 100%;
+  font-family: "Lato-Regular" Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;   
+  align-items: center;         
+  justify-content: center;     
+  gap: 8px;
+
+
+    &:hover {
+      background-color: #0d5691;
+    }
+}
+
+@mixin item-inmersion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  color:$text-neutral-primary;
+}
+
+
+@mixin bottom-menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $bg-brand-primary;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+@mixin bottom-menu-active {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  color: $text-neutral-inverse;
+  text-decoration: none;
+}
+
+
+@mixin bottom-menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  color: #73baf3;
+  text-decoration: none;
+
+}
+
+@mixin box-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@mixin stateTrue {
+  padding: 8px 12px;
+  width: fit-content;
+  text-align: center;
+  border-radius: 32px;
+  border: solid 2px #258583;
+  font-size: 12px;
+  color: #258583;
+  font-weight: bold;
+  background-color: #cbeeed;
+}
+
+@mixin stateFalse {
+  padding: 8px 12px;
+  width: fit-content;
+  text-align: center;
+  border-radius: 32px;
+  border: solid 2px rgb(255, 158, 12);
+  font-size: 12px;
+  color:rgb(255, 158, 12);
+  font-weight: bold;
+  background-color: #fff2d4;
+}
+
+
+@mixin carrusel-container {
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@mixin carrusel-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  justify-content: space-between;
+
+  a {
+    width:fit-content;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+  
+}
+
+@mixin carrusel-items {
+  display:flex;
+  flex-direction: row;
+  width: auto;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+
+  img {
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 16px;;
+    
+  }
+}

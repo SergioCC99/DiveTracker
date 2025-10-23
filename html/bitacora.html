@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitacora</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    
+    <!-- componente header (vue) -->
+    <div id="headerApp">
+        <app-header></app-header>
+        <desktop-header></desktop-header>
+    </div>
+
+    <main class="container-main">
+        <h2>Mi bitacora</h2>
+        <section class="resumen">
+            <h2>Resumen inmersiones</h2>
+
+            <div class="item-data">
+                <p>Inmersiones totales:</p>
+                <p id="totalInmersiones"></p>
+            </div>
+
+            <div class="item-data">
+                <p>Tiempo total:</p>
+                <p id="tiempoTotal"></p>
+            </div>
+        </section>
+
+        <a href="forminmersion.html" class="primary-button">Nueva inmersión<span class="material-symbols-outlined">add</span></a>
+        <!--Histroial de inmersiones-->
+        <section class="historial">
+            <h2>Historial de inmersiones</h2>
+            <ul id="listaInmersiones"></ul>
+        </section>
+
+    </main>
+
+    <!-- Menu inferior (vue) -->
+    <div id="menuApp">
+        <bottom-menu></bottom-menu>
+    </div>
+    
+    
+    <script src="../js/componentes/header.js"></script>
+    <script src="../js/componentes/bottomMenu.js"></script>
+    <script src="../js/bitacora.js"></script>
+    </body>
+
+</html>

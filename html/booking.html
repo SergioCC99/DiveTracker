@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Detalle escuela</title>
+</head>
+<body class="container">
+
+        <div class="title-inmersion">
+            <div class="title-number">
+                <h2>Formulario de Reserva</h2>
+            </div>
+        <span class="material-symbols-outlined" onclick="window.location.href='mapa.html'">close</span>
+        </div>
+        
+        <!--Escuela de buceo-->
+        <section class="detail-item">
+            <img src="" alt="Imagen escuela" class="img-especie-detail">
+            <div>
+                <h2 id="nombre"></h2>
+                <p id="descripcion"></p>
+                <p id="correo"></p>
+                <p id="telefono"></p>
+                <p id="direccion"></p>
+            </div>
+        </section>
+        <!--Fotos Escuela de buceo-->
+        <section class="carrusel-container">
+       
+            <div class="carrusel-title">
+                <h2>¡Conocenos!</h2>
+            </div>
+        
+            <div class="carrusel-items"></div>
+
+        </section>
+        <!--Formulario de reserva-->
+        <section class="detail-section">
+            <h2>Detalle Reserva</h2>
+            <div class="input-group">
+                <div class ="input-container">
+                    <label>Fecha</label>
+                    <input id="fecha" type="date" class="input-field-form">
+                </div>
+                <div class ="input-container">
+                    <label>Número de personas</label>
+                    <input id="nPersonas" type="number" placeholder="1" class="input-field-form">
+                </div>
+                <div class ="input-container">
+                    <label>Nivel de certificación</label>
+                    <input id="nivelCertificacion" type="text" placeholder="Ej. Avanzado, " class="input-field-form">
+                </div>
+                
+                <div class="checkbox-group">
+                    <h3>¿Requieren equipo?</h3>
+                    <label><input type="radio" name="equipo" value="Sí"> Sí</label>
+                    <label><input type="radio" name="equipo" value="No"> No</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h2>Interes y necesidades</h2>
+            <div class="input-group">
+                <div class ="input-container">
+                    <label>Interes</label>
+                    <textarea id="interes" placeholder="(Ej. Buceo tranquilo)"></textarea>
+                </div>
+                 <div class ="input-container">
+                    <label>Necesidades</label>
+                    <textarea id="necesidad" placeholder="(Ej. Dolor de espalda)"></textarea>
+                </div> 
+            </div>
+        </section>
+        <!--Boton guardar-->
+        <button id="guardarReserva" class="primary-button">Reservar</button>
+
+        <dialog id="modal">
+            <div class="modal-content">
+                <span class="material-symbols-outlined check">check_circle</span>
+                <p>Reserva gestionada con éxito</p>
+                <button class="primary-button" onclick="window.location.href= 'mapa.html'">continuar</button>
+            </div>
+        </dialog>
+        <dialog id="modalError">
+            <div class="modal-content">
+                <span class="material-symbols-outlined cancel">cancel</span>
+                <p>complete todos los campos</p>
+                <button class="primary-button" onclick="document.getElementById('modalError').close()">continuar</button>
+            </div>
+        </dialog>
+
+    <script src="../js/booking.js"></script>
+
+    </body>
+</html>

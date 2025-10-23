@@ -1,0 +1,25 @@
+//Colores Fondo:
+
+$bg-brand-primary: #0177D7;
+$bg-brand-secondary: #42c3c1;
+$bg-neutral-primary: #f8f8f8;
+$bg-neutral-secondary: #eeeeee;
+
+//Colores Texto:
+
+$text-brand-primary: #0177D7;
+$text-neutral-primary: #464646;
+$text-neutral-secondary: #7e7e7e;
+$text-neutral-inverse: #f8f8f8;
+
+//Colores Borders:
+
+$border-neutral-primary: #5c5e63;
+$border-brand-primary: #0177D7;
+
+//Fuentes
+$font-family: arial;
+$font-size-min: CalcRem(14);
+$font-ideal: CalcRem(16);
+$font-size-max: CalcRem(18);
+$font-size-base: clamp($font-size-min, $font-ideal, $font-size-max);

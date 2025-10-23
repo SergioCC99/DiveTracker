@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Formulario inmersion</title>
+</head>
+<body class="container">
+    <div class="title-inmersion">
+        <h2>Nueva inmersión</h2>
+
+        <span class="material-symbols-outlined" onclick="window.location.href='bitacora.html'">close</span>
+    </div>
+
+    <!--Formulario-->
+    <section class="detail-section">
+        <h2>información Base</h2>
+        <div class="input-group">
+            <div class ="input-container">
+                <label>Fecha</label>
+                <input id="fecha" type="date" class="input-field-form">
+            </div>
+            <div class ="input-container">
+                <label>Lugar</label>
+                <input id="lugar" type="text" placeholder="Ciudad, País" class="input-field-form">
+            </div>
+            <div class ="input-container">
+                <label>Sitio</label>
+                <input id="sitio" type="text" placeholder="Lugar donde buceo" class="input-field-form">
+            </div>
+             <div class ="input-container">
+                <label>Profundidad(Metros)</label>
+                <input id="profundidad" type="number" placeholder="metros" class="input-field-form">
+            </div>
+        </div>
+        <!--<div class="valoracion">
+            <p>Valoración:</p>
+            <div class="estrellas">
+                <span class="material-symbols-outlined">Star</span>
+                <span class="material-symbols-outlined">Star</span>
+                <span class="material-symbols-outlined">Star</span>
+                <span class="material-symbols-outlined">Star</span>
+                <span class="material-symbols-outlined">Star</span>
+            </div>
+        </div>-->
+    </section>
+
+    <section class="detail-section base">
+        <h2>Actividad</h2>
+        <div class="input-group">
+            <div class ="input-container">
+                <label>Actividad Realizada</label>
+                <input id="actividad" type="text" placeholder="Ej. Recreación, Practica, Rescate" class="input-field-form" required>
+            </div>
+            <div class ="input-container">
+                <label>Entrada(Bar o PSI)</label>
+                <input id="entradaPresion" type="text" placeholder="Cantidad: BAR o PSI" class="input-field-form" required>
+            </div>
+
+            <div class ="input-container">
+                <label>Salida(Bar o PSI)</label>
+                <input id="salidaPresion" type="text" placeholder="Cantidad: BAR o PSI" class="input-field-form" required>
+            </div>
+                        <div class ="input-container">
+                <label>Tiempo (minutos)</label>
+                <input type="number" id="Tiempo" placeholder="minutos" maxlength="5" class="input-field-form" required>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-section base">
+        <h2>Clima (opcional)</h2>
+        <div class="checkbox-group">
+            <h3>Corriente</h3>
+            <label><input type="radio" name="corriente" value="op1"> Ninguna</label>
+            <label><input type="radio" name="corriente" value="op2"> Poca</label>
+            <label><input type="radio" name="corriente" value="op3"> Regular</label>
+            <label><input type="radio" name="corriente" value="op4"> Mucha</label>
+        </div>
+        <div class="checkbox-group">
+            <h3>Marea</h3>
+            <label><input type="radio" name="marea" value="op1"> Ninguna</label>
+            <label><input type="radio" name="marea" value="op2"> Poca</label>
+            <label><input type="radio" name="marea" value="op3"> Regular</label>
+            <label><input type="radio" name="marea" value="op4"> Mucha</label>
+        </div>
+         <div class="checkbox-group">
+            <h3>Visibilidad</h3>
+            <label><input type="radio" name="view" value="op1"> Buena</label>
+            <label><input type="radio" name="view" value="op2"> Normal</label>
+            <label><input type="radio" name="view" value="op3"> Mala</label>
+        </div>
+        <div class="checkbox-group">
+            <h3>Tiempo</h3>
+            <label><input type="radio" name="time" value="op1"> Despejado</label>
+            <label><input type="radio" name="time" value="op2"> Nublado</label>
+            <label><input type="radio" name="time" value="op3"> Soleado</label>
+            <label><input type="radio" name="time" value="op3"> Lluvia</label>
+            <label><input type="radio" name="time" value="op3"> Niebla</label>
+        </div> 
+    </section>
+
+    <button id="guardarInmersion" type="button" class="primary-button">Guardar inmersion</button>
+
+    <dialog id="modal">
+        <div class="modal-content">
+            <span class="material-symbols-outlined check">check_circle</span>
+            <p>Inmersión guiardada con éxito</p>
+            <button class="primary-button" onclick="window.location.href= 'bitacora.html'">continuar</button>
+        </div>
+    </dialog>
+    <dialog id="modalError">
+        <div class="modal-content">
+            <span class="material-symbols-outlined cancel">cancel</span>
+            <p>complete todos los campos</p>
+            <button class="primary-button" onclick="document.getElementById('modalError').close()">continuar</button>
+        </div>
+    </dialog>
+
+<script src="../js/form.js"></script>
+
+</body>
+</html>
