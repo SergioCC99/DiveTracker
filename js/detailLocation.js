@@ -7,12 +7,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const speciesGrid = document.querySelector(".species-grid");
 
-  // Declaramos variables accesibles en todo el archivo
   let reserva = null;
 
-  // ==============================
-  // 1️⃣ Cargar detalle del sitio
-  // ==============================
+  //Cargar detalle del sitio
   try {
     const responseReservas = await fetch("../data/reservas.json");
     const dataReservas = await responseReservas.json();
@@ -20,9 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     reserva = dataReservas.reservas.find(u => String(u.id) === String(id));
 
     if (!reserva) {
-      console.warn("No se encontró la reserva con id:", id);
+      console.warn("No se encontró datos del sitio");
     } else {
-      console.log("Reserva encontrada:", reserva);
+      console.log("Se encontraron datos del sitio");
 
       // Actualizar la información principal
       document.querySelector(".img-especie-detail").src = reserva.imagen;
@@ -44,17 +41,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
   } catch (error) {
-    console.error("❌ No se cargó el detalle del sitio", error);
+    console.error("No se cargó el detalle del sitio");
   }
 
-  // ==============================
-  // 2️⃣ Cargar especies aleatorias
-  // ==============================
+  //Cargar especies aleatorias
+
   try {
     const responseEspecies = await fetch("../data/especies.json");
     const dataEspecies = await responseEspecies.json();
 
-    // Cargar especies desde localStorage si existe
+    // Cargar especies desde localStorage
     let especiesGuardadas = JSON.parse(localStorage.getItem("especies")) || [];
 
     // Combinar datos locales con el JSON base
@@ -88,27 +84,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
 
       speciesGrid.appendChild(div);
+      console.log("Especie agregada");
     });
 
   } catch (error) {
-    console.error("❌ No se pudieron cargar las especies", error);
+    console.error("No se pudieron cargar las especies");
   }
 
-  // ==============================
-  // 3️⃣ Cargar centros de buceo
-  // ==============================
+
+  //Cargar centros de buceo
+
   try {
     const responseCenter = await fetch("../data/diveCenter.json");
     const dataCenter = await responseCenter.json();
 
     const container = document.getElementById("diveCentersContainer");
-    container.innerHTML = ""; // limpiar por si acaso
+    container.innerHTML = "";
 
     dataCenter.diveCenter.forEach(centro => {
       const article = document.createElement("article");
       article.className = "Center";
 
-      // Verificamos que exista reserva antes de usarla
+      // Verificamos que exista la información del sitio para usarlo --Se hizo con IA para poder traer la información. (Esta sección se hizo 100% con IA, fue una barrera grande el desarrollo del producto)
       if (reserva && reserva.id) {
         article.addEventListener("click", () => {
           const url = `booking.html?idCentro=${encodeURIComponent(centro.id)}&idSitio=${encodeURIComponent(reserva.id)}`;
@@ -116,12 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           window.location.href = url;
         });
       } else {
-        // Si no hay reserva, enviamos solo el centro
-        article.addEventListener("click", () => {
-          const url = `booking.html?idCentro=${encodeURIComponent(centro.id)}`;
-          console.log("➡️ Redirigiendo solo con centro:", url);
-          window.location.href = url;
-        });
+        console.log("Error trayendo la información del sitio");
       }
 
       article.innerHTML = `
@@ -136,6 +128,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   } catch (error) {
-    console.error("❌ No se pudieron cargar los centros de buceo", error);
+    console.error("No se pudieron cargar los centros de buceo");
   }
 });

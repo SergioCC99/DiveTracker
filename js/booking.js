@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log("✅ booking.js cargado");
+  console.log("Documento cargado: Booking");
 
   // Obtener los parámetros de la URL
   const params = new URLSearchParams(window.location.search);
   const idCentro = params.get("idCentro");
   const idSitio = params.get("idSitio");
-  console.log("Parámetros recibidos:", { idCentro, idSitio });
 
   // Elementos del DOM
   const modal = document.getElementById("modal");
@@ -13,15 +12,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const btnGuardar = document.getElementById("guardarReserva");
 
   try {
-    // 1️⃣ Cargar JSON de centros (escuelas)
+    // Cargar JSON escuela de buceo
     const responseEscuelas = await fetch("../data/diveCenter.json");
     const dataEscuelas = await responseEscuelas.json();
     escuela = dataEscuelas.diveCenter.find(e => String(e.id) === String(idCentro));
-
-    if (!escuela) {
-      console.warn("No se encontró la escuela con ese ID");
-      return;
-    }
 
     // Mostrar datos en el HTML
     document.querySelector(".img-especie-detail").src = escuela.imagen;
@@ -43,26 +37,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   } catch (error) {
-    console.error("❌ Error cargando datos de la escuela:", error);
+    console.error("Error cargando la escuela");
   }
 
   try {
-    // 2️⃣ Cargar JSON de sitios
+    //Cargar JSON de reservaas para traer el sitio de buceo
     const responseSitios = await fetch("../data/reservas.json");
     const dataSitios = await responseSitios.json();
     sitio = dataSitios.reservas.find(s => String(s.id) === String(idSitio));
 
-    if (!sitio) {
-      console.warn("No se encontró el sitio con ese ID");
-    } else {
-      console.log("Sitio encontrado:", sitio);
-    }
-
   } catch (error) {
-    console.error("❌ Error cargando datos del sitio:", error);
+    console.error("Error cargando datos del siti");
   }
 
-  // 3️⃣ Guardar la reserva
+  //Guardar la reserva
   btnGuardar.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -75,16 +63,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Validación de campos
     if (!fecha || !nPersonas || !nivelCertificacion || !requiereEquipo) {
-      console.warn("⚠️ Faltan campos obligatorios");
+      console.warn("Faltan campos obligatorios");
       modalError.showModal();
-      return;
     }
 
     // Crear objeto de reserva
     const nuevaReserva = {
       id: Date.now(),
       imagen: sitio?.imagen || escuela.imagen,
-      lugar: sitio?.lugar || "Sin especificar",
+      lugar: sitio?.lugar,
       descripcion: sitio?.descripcion || "",
       img1: sitio?.img1 || "",
       img2: sitio?.img2 || "",
@@ -92,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       lat: escuela.lat,
       lng: escuela.lng,
       state: true,
-      nombre: "Sergio Combariza", // luego se puede reemplazar por usuario logueado
+      nombre: "Sergio Combariza",
       correo: "sergio@example.com",
       telefono: "+57 3015840336",
       fecha,
@@ -112,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     reservasGuardadas.push(nuevaReserva);
     localStorage.setItem("nuevasReservas", JSON.stringify(reservasGuardadas));
 
-    console.log("✅ Reserva guardada:", nuevaReserva);
+    console.log("Reserva guardada:");
     modal.showModal();
   });
 });
